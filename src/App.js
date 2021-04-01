@@ -4,7 +4,7 @@ import './App.scss';
 import Login from './app/pages/Login';
 
 function App() {
-	const user = null;
+	const user = { name: 'Anonymous' };
 
 	return (
 		<>
@@ -14,7 +14,7 @@ function App() {
 				) : (
 					<Switch>
 						<Route path='/' exact>
-							<div>Welcome tp BizWiz</div>
+							<h1 class='title is-primary-text'>Welcome to BizWiz</h1>
 						</Route>
 					</Switch>
 				)}
