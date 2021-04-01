@@ -1,19 +1,17 @@
 import React from 'react';
+import SideBarOption from './sidebar-child/SideBarOption';
+import SideBarRoom from './sidebar-child/SideBarRoom';
 import './SideBar.scss';
 
 function SideBar() {
 	return (
 		<div className='is-max-height side-bar-custom pr-0 mr-0'>
-			<div className='column is-sidebar-menu is-flat'>
+			<div className='column is-sidebar-menu'>
 				<aside className='menu'>
 					<div className='is-divider' data-content='Services'></div>
-					<h4 className='subtitle is-4 mx-4'>Anonymous user!</h4>
-
+					<SideBarOption></SideBarOption>
 					<div className='is-divider' data-content='Rooms'></div>
-					<div className='mx-4'>
-						<h6 className='subtitle is-6'>Room 1</h6>
-						<h6 className='subtitle is-6'>Room 2</h6>
-					</div>
+					<SideBarRoom></SideBarRoom>
 				</aside>
 			</div>
 		</div>
