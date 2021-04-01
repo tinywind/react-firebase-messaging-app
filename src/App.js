@@ -1,11 +1,25 @@
 import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.scss';
+import Login from './app/pages/Login';
 
 function App() {
+	const user = null;
+
 	return (
-		<div className='App'>
-			<header className='App-header'>Welcome tp BizWiz</header>
-		</div>
+		<>
+			<Router>
+				{!user ? (
+					<Login />
+				) : (
+					<Switch>
+						<Route path='/' exact>
+							<div>Welcome tp BizWiz</div>
+						</Route>
+					</Switch>
+				)}
+			</Router>
+		</>
 	);
 }
 
