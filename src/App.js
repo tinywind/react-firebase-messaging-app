@@ -1,4 +1,5 @@
 import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.scss';
 import Header from './app/components/Header';
@@ -6,8 +7,10 @@ import Header from './app/components/Header';
 import MainContent from './app/components/MainContent';
 import SideBar from './app/components/SideBar';
 import Login from './app/pages/Login';
+import { auth } from './firebase';
+
 function App() {
-	const user = null; //{ name: 'Anonymous' };
+	const [user] = useAuthState(auth);
 
 	return (
 		<>

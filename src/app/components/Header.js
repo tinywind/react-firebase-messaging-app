@@ -1,18 +1,23 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import FeatherIcon from 'feather-icons-react';
+import firebase from 'firebase';
 import React, { useRef, useState } from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { auth } from './../../firebase';
 import applogo from './../images/applogo-nav.svg';
 import './Header.scss';
 
 function Header() {
 	const [isActive, setIsActive] = useState(false);
 	const searchRef = useRef();
+	const [user] = useAuthState(auth);
 
 	const getLoggedInUser = () => {
-		/*will use, once the auth module in place*/
+		return user?.displayName;
 	};
-	const signOut = () => {
-		/*will use, once the auth module in place*/
+
+	const signOut = (e) => {
+		firebase.auth().signOut();
 	};
 
 	return (
