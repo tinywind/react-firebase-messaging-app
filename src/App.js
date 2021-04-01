@@ -7,7 +7,7 @@ import MainContent from './app/components/MainContent';
 import SideBar from './app/components/SideBar';
 import Login from './app/pages/Login';
 function App() {
-	const user = { name: 'Anonymous' };
+	const user = null; //{ name: 'Anonymous' };
 
 	return (
 		<>
