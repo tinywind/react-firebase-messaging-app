@@ -1,5 +1,6 @@
 import FeatherIcon from 'feather-icons-react';
 import React from 'react';
+import './RoomHeader.scss';
 
 function RoomHeader(props) {
 	const handleClick = () => {
