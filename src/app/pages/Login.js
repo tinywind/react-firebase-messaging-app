@@ -1,5 +1,5 @@
 import React from 'react';
-import applogo from './../images/logo.svg';
+import applogo from './../images/applogo.svg';
 
 function Login() {
 	const googleSignIn = (e) => {

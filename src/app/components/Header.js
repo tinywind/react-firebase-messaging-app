@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import FeatherIcon from 'feather-icons-react';
 import React, { useRef, useState } from 'react';
-import applogo from './../images/logo.svg';
+import applogo from './../images/applogo-nav.svg';
 import './Header.scss';
 
 function Header() {
