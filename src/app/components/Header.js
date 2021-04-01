@@ -25,7 +25,7 @@ function Header() {
 			<nav className='navbar navbar-low-line' role='navigation' aria-label='main navigation'>
 				<div className='column is-2'>
 					<div>
-						<img src={applogo} alt='BizWiz Logo' width='40' height='40' />
+						<img src={applogo} alt='BizWiz Logo' width='125' height='40' />
 					</div>
 					<div>
 						<a
