@@ -1,2 +1,42 @@
 // Styles for app side bar
 @import './../../App.scss';
+$isDark: false;
+$navbar-height: 60px;
+
+.side-bar-custom {
+	border-right: solid 1px;
+	background-color: if($isDark, $dark, $light);
+	height: '100%';
+	.links {
+		color: if($isDark, $light, $dark);
+	}
+
+	.prima-links {
+		margin: 5px;
+		color: if($isDark, $light, $dark);
+		font-size: $size-5;
+	}
+	.mega-links {
+		margin: 5px;
+		color: if($isDark, $light, $dark);
+		font-size: $size-4;
+	}
+}
+.is-fixed-width {
+	min-width: 280px;
+	width: 10%;
+}
+.is-flat {
+	// overflow-x: hidden !important;
+}
+.is-max-height {
+	min-height: calc(100vh - (#{$navbar-height} - 0.75rem));
+	max-height: calc(100vh - (#{$navbar-height} - 0.75rem));
+	height: calc(100vh - (#{$navbar-height} - 0.75rem));
+	display: flex;
+	flex-direction: row;
+	justify-content: stretch;
+	.column {
+		overflow-y: unset;
+	}
+}
