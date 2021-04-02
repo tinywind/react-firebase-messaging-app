@@ -9,7 +9,7 @@ import { addToCollection, db } from '../../../firebase';
 import './SideBarRoom.scss';
 
 function SideBarRoom() {
-	const [roomDetails, loading, error] = useCollection(db.collection('rooms'));
+	const [roomDetails, loading, error] = useCollection(db.collection('rooms').orderBy('name'));
 	const dispatch = useDispatch(enterRoom);
 
 	const addRoomHandler = () => {
