@@ -5,7 +5,7 @@ import React from 'react';
 import { useCollection } from 'react-firebase-hooks/firestore';
 import { useDispatch } from 'react-redux';
 import { enterRoom } from '../../../features/appSlice';
-import { addToCollection, db } from '../../../firebase';
+import { addToCollection, db, deleteDocumentById } from '../../../firebase';
 import './SideBarRoom.scss';
 
 function SideBarRoom() {
@@ -35,6 +35,12 @@ function SideBarRoom() {
 					<a className='column is-narrow mb-2'>
 						<FeatherIcon icon='message-square' size='18' />
 					</a>
+					{/* some hack for deleting the rooms under test mode */}
+					{!doc.id && (
+						<a className='column is-narrow mb-2'>
+							<FeatherIcon icon='x' size='18' onClick={() => deleteDocumentById('rooms', doc.id)} />
+						</a>
+					)}
 					<a className='column is-narrow mb-1' onClick={() => selectRoomHandler(doc.id)}>
 						{doc.data().name}
 					</a>
