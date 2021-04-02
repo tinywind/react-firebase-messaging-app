@@ -3,6 +3,7 @@ import React from 'react';
 import './RoomHeader.scss';
 
 function RoomHeader(props) {
+	const IsFavorite = props.isFavorite;
 	const handleClick = () => {
 		alert('Some Basic Information');
 	};
@@ -13,7 +14,7 @@ function RoomHeader(props) {
 				<div id='innerMenu' className='navbar-menu'>
 					<div className='navbar-start'>
 						<div className='navbar-item'>
-							<FeatherIcon icon='star' fill={props.isFavorite ? 'white' : ''} size='18' className='mr-3' />
+							<FeatherIcon icon='star' fill={IsFavorite ? 'white' : ''} size='18' className='mr-3' />
 							{props.RoomName !== undefined ? props.RoomName : 'Select Room'}
 						</div>
 					</div>

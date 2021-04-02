@@ -3,11 +3,14 @@
 import FeatherIcon from 'feather-icons-react';
 import React from 'react';
 import { useCollection } from 'react-firebase-hooks/firestore';
+import { useDispatch } from 'react-redux';
+import { enterRoom } from '../../../features/appSlice';
 import { addToCollection, db } from '../../../firebase';
 import './SideBarRoom.scss';
 
 function SideBarRoom() {
 	const [roomDetails, loading, error] = useCollection(db.collection('rooms'));
+	const dispatch = useDispatch(enterRoom);
 
 	const addRoomHandler = () => {
 		const roomName = prompt('Enter the room name!');
@@ -18,8 +21,10 @@ function SideBarRoom() {
 		}
 	};
 
-	const selectRoomHandler = (roomName) => {
-		alert(roomName + ' selected successfully!');
+	const selectRoomHandler = (id) => {
+		if (id) {
+			dispatch(enterRoom({ RoomId: id }));
+		}
 	};
 
 	const renderRooms = (rooms) => {

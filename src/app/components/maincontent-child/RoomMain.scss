@@ -1,1 +1,14 @@
 // Styles for Main Room
+@import '../../../App.scss';
+$isDark: false;
+
+.bubble {
+	max-width: 95%;
+	margin: 10px auto;
+	background: if($isDark, $dark, $light);
+	padding: 10px;
+	text-align: left;
+	color: if($isDark, $light, $isDark);
+	position: relative;
+	border-radius: 10px;
+}
