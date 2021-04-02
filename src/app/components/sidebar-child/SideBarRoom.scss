@@ -1,1 +1,12 @@
 // Styles for Side Bar Rooms
+a:hover {
+	background-color: transparent !important;
+}
+
+.is-scroll {
+	width: auto;
+	max-height: max-content;
+	height: 45vh;
+	overflow-x: hidden;
+	overflow-y: scroll;
+}
