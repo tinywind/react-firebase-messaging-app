@@ -5,12 +5,23 @@ import React, { useRef, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { auth } from './../../firebase';
 import applogo from './../images/applogo-nav.svg';
+import Dialog from './common/Dialog';
 import './Header.scss';
 
 function Header() {
 	const [isActive, setIsActive] = useState(false);
 	const searchRef = useRef();
 	const [user] = useAuthState(auth);
+
+	const [isShowing, setIsShowing] = useState(false);
+
+	const openDialogHandler = () => {
+		setIsShowing(true);
+	};
+
+	const closeDialogHandler = () => {
+		setIsShowing(false);
+	};
 
 	const getLoggedInUser = () => {
 		return user?.displayName;
@@ -69,11 +80,15 @@ function Header() {
 							<div className='navbar-dropdown'>
 								<a className='navbar-item is-flex-wrap-nowrap	'>
 									<FeatherIcon icon='user' size='24' />
-									<div className='mx-2'>Your Profile</div>
+									<div className='mx-2' onClick={openDialogHandler}>
+										Your Profile
+									</div>
 								</a>
 								<a className='navbar-item'>
 									<FeatherIcon icon='settings' size='24' />
-									<div className='mx-2'>Edit Settings</div>
+									<div className='mx-2' onClick={openDialogHandler}>
+										Edit Settings
+									</div>
 								</a>
 								<hr className='navbar-divider' />
 								<a className='navbar-item'>
@@ -87,6 +102,10 @@ function Header() {
 					</div>
 				</div>
 			</nav>
+
+			<Dialog className='modal' show={isShowing} close={closeDialogHandler} buttonText='Okay'>
+				<div className='is-size-6 my-2'>This feature will be available soon...</div>
+			</Dialog>
 		</>
 	);
 }
