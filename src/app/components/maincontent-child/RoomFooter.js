@@ -49,10 +49,10 @@ function RoomFooter(props) {
 			<div className='column is-centered has-icons-left'>
 				<div className='control has-icons-left has-icons-right mx-3 mb-3'>
 					<form onSubmit={sendMessage}>
+						<input className='input is-primary' type='text' placeholder={`Enter your message...`} ref={sendRef} />
 						<span className='icon is-left '>
 							<FeatherIcon icon='send' size='24' />
-						</span>
-						<input className='input is-primary' type='text' placeholder={`Enter your message...`} ref={sendRef} />
+						</span>{' '}
 						<span className='icon is-small is-right'>
 							<FeatherIcon
 								className='fav-icon'
