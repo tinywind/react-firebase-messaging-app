@@ -14,4 +14,22 @@ const db = firebaseApp.firestore();
 const auth = firebase.auth();
 const provider = new firebase.auth.GoogleAuthProvider();
 
-export { auth, db, provider };
+const addToCollection = async (collectionName, entryObject) => {
+	return await db
+		.collection(collectionName)
+		.add(entryObject)
+		.then((result) => {
+			return result.id;
+		});
+};
+
+const deleteDocumentById = async (collectionName, documentId) => {
+	return await db
+		.collection(collectionName)
+		.doc(documentId)
+		.delete()
+		.then((result) => {
+			return result;
+		});
+};
+export { auth, db, provider, addToCollection, deleteDocumentById };
