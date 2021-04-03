@@ -1,22 +1,33 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 // import Loading from '../../components/common/Loading';
 import FeatherIcon from 'feather-icons-react';
-import React from 'react';
+import React, { useState } from 'react';
 import { useCollection } from 'react-firebase-hooks/firestore';
 import { useDispatch } from 'react-redux';
 import { enterRoom } from '../../../features/appSlice';
 import { addToCollection, db, deleteDocumentById } from '../../../firebase';
+import Dialog from './../common/Dialog';
 import './SideBarRoom.scss';
 
 function SideBarRoom() {
 	const [roomDetails, loading, error] = useCollection(db.collection('rooms').orderBy('name'));
 	const dispatch = useDispatch(enterRoom);
 
+	const [isShowing, setIsShowing] = useState(false);
+
+	const openDialogHandler = () => {
+		setIsShowing(true);
+	};
+
+	const closeDialogHandler = () => {
+		setIsShowing(false);
+	};
+
 	const addRoomHandler = () => {
 		const roomName = prompt('Enter the room name!');
 		if (roomName) {
 			addToCollection('rooms', { name: roomName }).then((result) => {
-				alert(roomName + ' added successfully!');
+				openDialogHandler();
 			});
 		}
 	};
@@ -64,6 +75,9 @@ function SideBarRoom() {
 					<li>{renderRooms(roomDetails)}</li>
 				</ul>
 			</div>
+			<Dialog className='modal' show={isShowing} close={closeDialogHandler} buttonText='Okay'>
+				<div className='is-size-6 my-2'>A new room added successfully.</div>
+			</Dialog>
 		</>
 	);
 }

@@ -60,7 +60,7 @@ function Header() {
 						<form
 							onSubmit={(e) => {
 								e.preventDefault();
-								alert(searchRef.current.value);
+								openDialogHandler();
 							}}>
 							<input className='input is-primary' type='text' placeholder='Search your wiz' ref={searchRef} />
 							<span className='icon is-left '>
