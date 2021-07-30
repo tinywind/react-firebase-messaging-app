@@ -8,7 +8,7 @@ import RoomHeader from './maincontent-child/RoomHeader';
 import RoomMain from './maincontent-child/RoomMain';
 import './MainContent.scss';
 
-function MainContent() {
+function Room() {
 	const RoomId = useSelector(selectRoomId);
 	const [RoomDetails] = useDocument(RoomId && firestore.collection('rooms').doc(RoomId));
 	const RoomName = RoomDetails?.data()?.name;
@@ -24,4 +24,4 @@ function MainContent() {
 	);
 }
 
-export default MainContent;
+export default Room;
