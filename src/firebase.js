@@ -2,7 +2,7 @@ import firebase from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/firestore';
 
-export const db = firebase.initializeApp({
+export const firestore = firebase.initializeApp({
     apiKey: '--YOUR-FIREBASE-API-KEY--',
     authDomain: '--YOUR-FIREBASE-AUTH-DOMAIN-NAME--',
     projectId: '--YOUR-FIREBASE-PROJECT-ID--',
@@ -15,12 +15,12 @@ export const auth = firebase.auth();
 
 export const provider = new firebase.auth.GoogleAuthProvider();
 
-export const addToCollection = async (collectionName, entryObject) => await db
+export const addToCollection = async (collectionName, entryObject) => await firestore
     .collection(collectionName)
     .add(entryObject)
     .then((result) => result.id);
 
-export const deleteDocumentById = async (collectionName, documentId) => await db
+export const deleteDocumentById = async (collectionName, documentId) => await firestore
     .collection(collectionName)
     .doc(documentId)
     .delete()

@@ -5,12 +5,12 @@ import React, {useContext} from 'react';
 import {useCollection} from 'react-firebase-hooks/firestore';
 import {useDispatch} from 'react-redux';
 import {enterRoom} from '../../../features/appSlice';
-import {addToCollection, db, deleteDocumentById} from '../../../firebase';
+import {addToCollection, firestore, deleteDocumentById} from '../../../firebase';
 import './SideBarRoom.scss';
 import {AlertDialogContext} from "../common/AlertDialogProvider";
 
 function SideBarRoom() {
-    const [roomDetails, loading, error] = useCollection(db.collection('rooms').orderBy('name'));
+    const [roomDetails, loading, error] = useCollection(firestore.collection('rooms').orderBy('name'));
     const dispatch = useDispatch(enterRoom);
 
     const alertContext = useContext(AlertDialogContext);

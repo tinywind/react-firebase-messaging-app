@@ -4,7 +4,7 @@ import FeatherIcon from 'feather-icons-react';
 import firebase from 'firebase';
 import React, {useState} from 'react';
 import {useAuthState} from 'react-firebase-hooks/auth';
-import {auth, db} from '../../../firebase';
+import {auth, firestore} from '../../../firebase';
 import Loading from '../../components/common/Loading';
 import './RoomFooter.scss';
 
@@ -29,7 +29,7 @@ function RoomFooter(props) {
             return;
         }
 
-        db.collection('rooms').doc(props.RoomId).collection('messages').add({
+        firestore.collection('rooms').doc(props.RoomId).collection('messages').add({
             message: sendRef.current.value,
             timeStamp: firebase.firestore.FieldValue.serverTimestamp(),
             sender: user?.displayName,
