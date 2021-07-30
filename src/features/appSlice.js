@@ -1,22 +1,22 @@
-import { createSlice } from '@reduxjs/toolkit';
+import {createSlice} from '@reduxjs/toolkit';
 
 export const appSlice = createSlice({
-	name: 'app',
-	initialState: {
-		RoomId: null,
-	},
-	reducers: {
-		enterRoom: (state, action) => {
-			state.RoomId = action.payload.RoomId;
-		},
-		// default: (state) => {
-		// 	state.RoomId = 'ArrYSCyVIyqtr6spFA5k';
-		// },
-	},
+    name: 'app',
+    initialState: {
+        roomId: null,
+    },
+    reducers: {
+        enterRoom: (state, action) => {
+            state.roomId = action.payload.roomId;
+        },
+        // default: (state) => {
+        // 	state.roomId = 'ArrYSCyVIyqtr6spFA5k';
+        // },
+    },
 });
 
-export const { enterRoom } = appSlice.actions;
+export const {enterRoom} = appSlice.actions;
 
-export const selectRoomId = (state) => state.appReducer.RoomId;
+export const selectRoomId = (state) => state.appReducer.roomId;
 
 export default appSlice.reducer;
