@@ -1,7 +1,7 @@
 import React, {useContext} from 'react';
 import {AlertDialogContext} from "../common/AlertDialogProvider";
 
-export default function SidebarOption() {
+export default function Options() {
     const alertContext = useContext(AlertDialogContext);
     const showAlert = () => alertContext.show(<div className='is-size-6 my-2'>This feature will be available soon...</div>);
 

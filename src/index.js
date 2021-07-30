@@ -1,17 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Provider} from 'react-redux';
 import * as serviceWorker from './serviceWorker';
 import AlertDialogProvider from "./app/components/common/AlertDialogProvider";
 import App from './App';
-import store from './features/store';
 
 ReactDOM.render(
     <React.StrictMode>
         <AlertDialogProvider>
-            <Provider store={store}>
-                <App/>
-            </Provider>
+            <App/>
         </AlertDialogProvider>
     </React.StrictMode>,
     document.getElementById('root')

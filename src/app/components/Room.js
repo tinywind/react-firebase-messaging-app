@@ -1,14 +1,13 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import {useCollection, useDocument} from 'react-firebase-hooks/firestore';
-import {useSelector} from 'react-redux';
-import {selectRoomId} from '../../features/appSlice';
 import {firestore} from '../../features/firebase';
-import Footer from './room/Footer';
+import {RoomContext} from "../pages/Main";
 import Header from './room/Header';
-import Body from './room/Body';
+import Body from "./room/Body";
+import Footer from "./room/Footer";
 
 export default function Room() {
-    const roomId = useSelector(selectRoomId);
+    const {roomId} = useContext(RoomContext);
     const [room] = useDocument(roomId &&
         firestore.collection('rooms')
             .doc(roomId)
@@ -20,7 +19,7 @@ export default function Room() {
             .orderBy('timeStamp', 'asc')
     );
 
-    return (
+    return !!room && (
         <>
             <Header roomId={roomId} roomName={room?.data().name} isFavorite={false}/>
             <Body roomId={roomId} chatMessages={chatMessages} loading={loading} hasError={error}/>
