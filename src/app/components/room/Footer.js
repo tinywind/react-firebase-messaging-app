@@ -1,4 +1,4 @@
-import {Emoji, Picker} from 'emoji-mart';
+import {Picker} from 'emoji-mart';
 import 'emoji-mart/css/emoji-mart.css';
 import FeatherIcon from 'feather-icons-react';
 import firebase from 'firebase/app';
@@ -12,7 +12,7 @@ export default function Footer(props) {
     const [user] = useAuthState(auth);
     const [showPicker, setShowPicker] = useState(false);
 
-    const appendEmoji = (emoji: Emoji) => {
+    const appendEmoji = (emoji) => {
         inputRef.current.value += emoji.native;
         setShowPicker(false);
         inputRef.current.focus();
@@ -45,12 +45,11 @@ export default function Footer(props) {
                     <input className='input is-primary' type='text' placeholder={`Enter your message...`} ref={inputRef}/>
                     <div className='icon is-left'><FeatherIcon icon='send' size='24'/></div>
                     <div className='icon is-small is-right'>
-                        <a onClick={() => setShowPicker(true)}><FeatherIcon className='fav-icon' icon='smile' size='24'/></a>
-                        {showPicker && (
-                            <div style={{position: 'absolute', bottom: 10, right: 10}}>
-                                <Picker emoji='' title='' native={true} onSelect={appendEmoji}/>
-                            </div>
-                        )}
+                        <button type='button' onClick={() => setShowPicker(true)}><FeatherIcon className='fav-icon' icon='smile' size='24'/></button>
+                        {showPicker &&
+                        <div style={{position: 'absolute', bottom: 10, right: 10}}>
+                            <Picker emoji='' title='' native={true} onSelect={appendEmoji}/>
+                        </div>}
                     </div>
                 </form>
             </div>

@@ -8,10 +8,10 @@ export default function Options() {
     return (
         <ul className='menu-list'>
             <li>
-                <button className='links' onClick={showAlert}>Saved Conversations</button>
+                <button type='button' className='links' onClick={showAlert}>Saved Conversations</button>
             </li>
             <li>
-                <button className='links' onClick={showAlert}>Your Groups</button>
+                <button type='button' className='links' onClick={showAlert}>Your Groups</button>
             </li>
         </ul>
     );

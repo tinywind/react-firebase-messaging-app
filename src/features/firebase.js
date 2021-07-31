@@ -3,12 +3,13 @@ import 'firebase/auth';
 import 'firebase/firestore';
 
 export const firestore = firebase.initializeApp({
-    apiKey: '--YOUR-FIREBASE-API-KEY--',
-    authDomain: '--YOUR-FIREBASE-AUTH-DOMAIN-NAME--',
-    projectId: '--YOUR-FIREBASE-PROJECT-ID--',
-    storageBucket: '--YOUR-FIREBASE-STORAGE-BUCKET--',
-    messagingSenderId: '--YOUR-FIREBASE-MESSAGING-SENDER-D--',
-    appId: '--YOUR-FIREBASE-APP-ID--',
+    apiKey: "AIzaSyDEsxRZLY1HX4-5D4EUGd-QAHQ6uIPL3hM",
+    authDomain: "test-app-29d01.firebaseapp.com",
+    projectId: "test-app-29d01",
+    storageBucket: "test-app-29d01.appspot.com",
+    messagingSenderId: "962383895461",
+    appId: "1:962383895461:web:8228395084e68bde93264c",
+    measurementId: "G-82C1FVSX84"
 }).firestore();
 
 export const auth = firebase.auth();

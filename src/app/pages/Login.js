@@ -19,7 +19,7 @@ export default function Login() {
                                     <img src={logo} width='125' height='125' alt='Sign-In To BizWiz'/>
                                 </figure>
                                 <footer className='card-content has-text-centered'>
-                                    <button className='button is-success' onClick={googleSignIn}>Sign-In With Google</button>
+                                    <button type='button' className='button is-success' onClick={googleSignIn}>Sign-In With Google</button>
                                 </footer>
                             </div>
                         </div>

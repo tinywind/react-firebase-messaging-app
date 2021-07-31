@@ -19,7 +19,7 @@ export default function Header() {
                     <img src={logo} alt='BizWiz Logo' width='125' height='40'/>
                 </div>
                 <div>
-                    <button className={`navbar-burger icon is-left burger ${expendedMiniBar ? 'is-active' : ''}`} onClick={() => setExpendedMiniBar(!expendedMiniBar)}>
+                    <button type='button' className={`navbar-burger icon is-left burger ${expendedMiniBar ? 'is-active' : ''}`} onClick={() => setExpendedMiniBar(!expendedMiniBar)}>
                         <span aria-hidden='true'/>
                         <span aria-hidden='true'/>
                         <span aria-hidden='true'/>
@@ -43,16 +43,16 @@ export default function Header() {
                     <div className='navbar-item has-dropdown is-hoverable'>
                         <span className='navbar-link'>Welcome {user?.displayName}</span>
                         <div className='navbar-dropdown'>
-                            <button className='navbar-item is-flex-wrap-nowrap' onClick={showAlert}>
+                            <button type='button' className='navbar-item is-flex-wrap-nowrap' onClick={showAlert}>
                                 <FeatherIcon icon='user' size='24'/>
                                 <div className='mx-2'>Your Profile</div>
                             </button>
-                            <button className='navbar-item' onClick={showAlert}>
+                            <button type='button' className='navbar-item' onClick={showAlert}>
                                 <FeatherIcon icon='settings' size='24'/>
                                 <div className='mx-2'>Edit Settings</div>
                             </button>
                             <hr className='navbar-divider'/>
-                            <button className='navbar-item' onClick={() => auth.signOut()}>
+                            <button type='button' className='navbar-item' onClick={() => auth.signOut()}>
                                 <FeatherIcon icon='log-out' size='24'/>
                                 <div className='mx-2'>Logout</div>
                             </button>

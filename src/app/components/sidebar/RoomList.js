@@ -16,7 +16,7 @@ export default function RoomList() {
         <RoomContext.Consumer>
             {({setRoomId}) =>
                 <>
-                    <button className='prima-links columns' onClick={() => addRoom()}>
+                    <button type='button' className='prima-links columns' onClick={() => addRoom()}>
                         <span className='column is-10'>Add Rooms</span>
                         <div className='column is-narrow'>
                             <FeatherIcon icon='plus-circle' size='24'/>
@@ -28,13 +28,13 @@ export default function RoomList() {
                                 <li key={e.id}>
                                     <div className='links columns'>
                                         <span className='column is-narrow mb-2'><FeatherIcon icon='message-square' size='18'/></span>
-                                        <button className='column is-narrow mb-2'><FeatherIcon icon='x' size='18' onClick={() => deleteDocumentById('rooms', e.id)}/></button>
-                                        <button className='column is-narrow mb-1' onClick={() => setRoomId(e.id)}>{e.data().name}</button>
+                                        <button type='button' className='column is-narrow mb-2'><FeatherIcon icon='x' size='18' onClick={() => deleteDocumentById('rooms', e.id)}/></button>
+                                        <button type='button' className='column is-narrow mb-1' onClick={() => setRoomId(e.id)}>{e.data().name}</button>
                                     </div>
                                 </li>
                             )}
                         </ul>
-                    </div>
+                    </div>`
                 </>
             }
         </RoomContext.Consumer>
