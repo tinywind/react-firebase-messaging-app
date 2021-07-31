@@ -22,7 +22,18 @@ Use this app as a starting point to create a messaging apps like Chanty, Discord
 
 1. create a Firebase project in the Firebase console: `https://console.firebase.google.com/`
 2. add Web app to your project: `https://console.firebase.google.com/u/0/project/{project-id}/overview`
-3. copy Firebase keys and paste to `firebase.js`
+3. copy Firebase keys and paste to `.env` (if no exist file, create .env file at project root directory)
+
+```
+REACT_APP_API_KEY=AIzaSyDEsxRZLY1HX4-5D4EUGd-QAHQ6uIPL3hM
+REACT_APP_AUTH_DOMAIN=test-app-29d01.firebaseapp.com
+REACT_APP_PROJECT_ID=test-app-29d01
+REACT_APP_STORAGE_BUCKET=test-app-29d01.appspot.com
+REACT_APP_MESSAGING_SENDER_ID=962383895461
+REACT_APP_APP_ID=1:962383895461:web:8228395084e68bde93264c
+REACT_APP_MEASUREMENT_ID=G-82C1FVSX84
+```
+
 4. create Firestore: `https://console.firebase.google.com/u/0/project/{project-id}/firestore`
 5. update Firestore Rules and Publish: `https://console.firebase.google.com/u/0/project/test-app-29d01/firestore/rules`
 
