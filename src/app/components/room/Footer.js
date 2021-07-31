@@ -45,7 +45,7 @@ export default function Footer(props) {
                     <input className='input is-primary' type='text' placeholder={`Enter your message...`} ref={inputRef}/>
                     <div className='icon is-left'><FeatherIcon icon='send' size='24'/></div>
                     <div className='icon is-small is-right'>
-                        <button type='submit' onClick={() => setShowPicker(true)}><FeatherIcon className='fav-icon' icon='smile' size='24'/></button>
+                        <button type='button' onClick={() => setShowPicker(true)}><FeatherIcon className='fav-icon' icon='smile' size='24'/></button>
                         {showPicker &&
                         <div style={{position: 'absolute', bottom: 10, right: 10}}>
                             <Picker emoji='' title='' native={true} onSelect={appendEmoji}/>
