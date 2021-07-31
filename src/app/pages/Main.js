@@ -1,9 +1,9 @@
-import React, {useState} from 'react';
+import React, {createContext, useState} from 'react';
 import Header from "../components/Header";
 import Sidebar from "../components/Sidebar";
 import Room from "../components/Room";
 
-export const RoomContext = React.createContext(null);
+export const RoomContext = createContext(null);
 
 export default function Main() {
     const [roomId, setRoomId] = useState(null);

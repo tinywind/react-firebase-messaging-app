@@ -1,7 +1,7 @@
-import React, {useState} from "react";
+import React, {createContext, useState} from "react";
 import Dialog from "./Dialog";
 
-export const AlertDialogContext = React.createContext(null);
+export const AlertDialogContext = createContext(null);
 
 export default function AlertDialogProvider(props) {
     const [content, setContent] = useState(null);

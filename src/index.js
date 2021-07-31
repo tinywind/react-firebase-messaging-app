@@ -1,15 +1,15 @@
-import React from 'react';
+import React, {StrictMode} from 'react';
 import ReactDOM from 'react-dom';
 import * as serviceWorker from './serviceWorker';
 import AlertDialogProvider from "./app/components/common/AlertDialogProvider";
 import App from './App';
 
 ReactDOM.render(
-    <React.StrictMode>
+    <StrictMode>
         <AlertDialogProvider>
             <App/>
         </AlertDialogProvider>
-    </React.StrictMode>,
+    </StrictMode>,
     document.getElementById('root')
 );
 
