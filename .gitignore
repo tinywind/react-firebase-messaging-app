@@ -23,7 +23,7 @@ yarn-debug.log*
 yarn-error.log*
 
 # custom -
-firebase.js
+.env
 package-lock.json
 yarn.lock
 .idea
